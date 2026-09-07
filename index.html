@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Boulder County Photography</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #2b2b2b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #eeeeee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #222;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #a57a42;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 78vh;
+
+      /*
+        We will replace hero.jpg with one of your actual photographs.
+      */
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.30),
+          rgba(0, 0, 0, 0.42)
+        ),
+        url("hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      padding: 70px 24px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 82px);
+      font-weight: normal;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      text-shadow: 0 3px 18px rgba(0,0,0,.45);
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 23px);
+      margin-bottom: 30px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.5);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 26px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: .2s ease;
+    }
+
+    .button-light {
+      background: white;
+      color: #222;
+    }
+
+    .button-light:hover {
+      background: #eeeeee;
+    }
+
+    .button-outline {
+      color: white;
+      border: 2px solid white;
+    }
+
+    .button-outline:hover {
+      background: white;
+      color: #222;
+    }
+
+    /* ---------- INTRO ---------- */
+
+    .intro {
+      max-width: 850px;
+      margin: auto;
+      padding: 80px 24px 65px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      color: #5b5b5b;
+    }
+
+    /* ---------- PORTFOLIO ---------- */
+
+    .portfolio {
+      max-width: 1250px;
+      margin: auto;
+      padding: 20px 24px 90px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: normal;
+    }
+
+    .section-heading p {
+      margin-top: 8px;
+      color: #666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      display: block;
+      transition: transform .25s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.015);
+    }
+
+    /*
+       For now these image names are placeholders.
+       We will change them after you upload your photographs.
+    */
+
+    /* ---------- ABOUT ---------- */
+
+    .about {
+      background: #f6f3ef;
+      padding: 80px 24px;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact {
+      padding: 90px 24px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 14px;
+    }
+
+    .contact > p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .contact-details a {
+      display: inline-block;
+      padding: 14px 24px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .contact-details a:hover {
+      background: #a57a42;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      background: #222;
+      color: #dddddd;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery img {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: auto;
+      }
+
+      .intro,
+      .about,
+      .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="nav">
+
+      <a class="brand" href="#">
+        Boulder County Photography
+      </a>
+
+      <div class="nav-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Boulder County Photography</h1>
+
+      <p>
+        People • Places • Real Moments
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="button button-light"
+          href="#portfolio"
+        >
+          View My Work
+        </a>
+
+        <a
+          class="button button-outline"
+          href="mailto:mskolyak@live.com"
+        >
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <h2>Capture What Matters</h2>
+
+    <p>
+      Natural, meaningful photography for individuals,
+      couples, families, seniors, maternity, newborns
+      and the moments you want to remember.
+    </p>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section
+    class="portfolio"
+    id="portfolio"
+  >
+
+    <div class="section-heading">
+
+      <h2>My Work</h2>
+
+      <p>
+        A few favorite moments from recent sessions.
+      </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+      <img
+        src="photo1.jpg"
+        alt="Portrait photography sample"
+      >
+
+      <img
+        src="photo2.jpg"
+        alt="Family photography sample"
+      >
+
+      <img
+        src="photo3.jpg"
+        alt="Senior portrait photography sample"
+      >
+
+      <img
+        src="photo4.jpg"
+        alt="Couples photography sample"
+      >
+
+      <img
+        src="photo5.jpg"
+        alt="Newborn photography sample"
+      >
+
+      <img
+        src="photo6.jpg"
+        alt="Outdoor portrait photography sample"
+      >
+
+      <img
+        src="photo7.jpg"
+        alt="Engagement photography sample"
+      >
+
+      <img
+        src="photo8.jpg"
+        alt="Family portrait photography sample"
+      >
+
+      <img
+        src="photo9.jpg"
+        alt="Lifestyle photography sample"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section
+    class="about"
+    id="about"
+  >
+
+    <div class="about-inner">
+
+      <h2>Photography Focused on Real Moments</h2>
+
+      <p>
+        Boulder County Photography offers relaxed portrait
+        photography for individuals, couples, families,
+        seniors, maternity, newborns and special moments.
+        My goal is to create photographs that feel natural,
+        personal and worth keeping.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section
+    class="contact"
+    id="contact"
+  >
+
+    <h2>Let's Create Something Beautiful</h2>
+
+    <p>
+      Have a session in mind? Contact me and let's talk about it.
+    </p>
+
+    <div class="contact-details">
+
+      <a href="mailto:mskolyak@live.com">
+        Email Me
+      </a>
+
+      <a href="tel:+13039176522">
+        Call 303-917-6522
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Boulder County Photography
+    • Boulder County, Colorado
+
+  </footer>
+
+</body>
+</html>
