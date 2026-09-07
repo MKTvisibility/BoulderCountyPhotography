@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Boulder County Photography | Portrait Photography</title>
+  <title>Boulder County Photography | Colorado Portrait Photographer</title>
 
   <meta
     name="description"
-    content="Boulder County Photography offers portrait photography throughout Boulder County and surrounding Colorado communities."
+    content="Boulder County Photography offers portrait, family, senior, couples, maternity and newborn photography in Boulder County, Colorado."
   >
 
   <style>
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -24,75 +26,76 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #333;
-      background: #fff;
+      background: #ffffff;
+      color: #292929;
       line-height: 1.6;
     }
 
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-    }
-
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
     }
 
-    /* =========================
-       HEADER / NAVIGATION
-       ========================= */
+
+    /* ================================
+       HEADER
+    ================================= */
 
     header {
-      height: 72px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      padding: 10px 25px;
+
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 8px 8%;
-      position: relative;
-      z-index: 10;
-    }
-
-    .logo img {
-      width: 72px;
-      height: auto;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
       align-items: center;
     }
 
-    nav a {
-      font-size: 13px;
-      color: #444;
-      transition: opacity 0.2s ease;
+    .header-logo {
+      width: 95px;
+      height: 65px;
+      object-fit: contain;
     }
 
-    nav a:hover {
-      opacity: 0.6;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
 
-    /* =========================
+    .nav-links a {
+      color: #333;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #b38a52;
+    }
+
+
+    /* ================================
        HERO
-       ========================= */
+    ================================= */
 
     .hero {
       min-height: 82vh;
 
-      background:
+      background-image:
         linear-gradient(
-          rgba(0, 0, 0, 0.05),
-          rgba(0, 0, 0, 0.12)
+          rgba(0, 0, 0, 0.02),
+          rgba(0, 0, 0, 0.08)
         ),
         url("2022-04-20_23-59-31_422.jpeg");
 
@@ -116,10 +119,11 @@
     }
 
     .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
       font-size: clamp(48px, 6vw, 82px);
       line-height: 1.02;
       margin-bottom: 18px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
     .hero-tagline {
@@ -131,79 +135,87 @@
 
     .hero-description {
       font-size: 14px;
+      line-height: 1.7;
       margin: 0 auto 28px;
       max-width: 580px;
-      line-height: 1.7;
     }
 
     .hero-buttons {
       display: flex;
       justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .btn {
+    .button {
       display: inline-block;
       padding: 13px 24px;
-      border: 1px solid white;
+      border-radius: 2px;
       font-size: 13px;
       transition: 0.2s ease;
     }
 
-    .btn-light {
+    .button-light {
+      background: white;
+      color: #222;
+      border: 1px solid white;
+    }
+
+    .button-light:hover {
+      background: #eee;
+    }
+
+    .button-outline {
+      color: white;
+      border: 1px solid white;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .button-outline:hover {
       background: white;
       color: #222;
     }
 
-    .btn-light:hover {
-      background: transparent;
-      color: white;
-    }
 
-    .btn-dark {
-      background: rgba(0, 0, 0, 0.65);
-      color: white;
-    }
-
-    .btn-dark:hover {
-      background: white;
-      color: #222;
-    }
-
-    /* =========================
+    /* ================================
        INTRO
-       ========================= */
+    ================================= */
 
     .intro {
-      padding: 75px 20px 50px;
+      max-width: 850px;
+      margin: auto;
+      padding: 80px 25px 65px;
       text-align: center;
     }
 
     .intro-logo {
-      width: 210px;
-      margin: 0 auto 35px;
+      width: 220px;
+      max-width: 75%;
+      margin: 0 auto 30px;
     }
 
     .intro h2 {
-      font-size: 36px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
       margin-bottom: 18px;
     }
 
     .intro p {
-      max-width: 780px;
-      margin: auto;
-      font-size: 14px;
+      font-size: 16px;
       color: #666;
       line-height: 1.8;
     }
 
-    /* =========================
+
+    /* ================================
        PORTFOLIO
-       ========================= */
+    ================================= */
 
     .portfolio {
-      padding: 30px 4% 80px;
+      max-width: 1250px;
+      margin: auto;
+      padding: 20px 24px 90px;
     }
 
     .section-heading {
@@ -212,69 +224,88 @@
     }
 
     .section-heading h2 {
-      font-size: 36px;
-      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: normal;
     }
 
     .section-heading p {
-      color: #888;
-      font-size: 13px;
+      color: #777;
+      margin-top: 6px;
+      font-size: 14px;
     }
 
     .gallery {
-      max-width: 1200px;
-      margin: auto;
       columns: 3;
-      column-gap: 10px;
+      column-gap: 12px;
     }
 
-    .gallery img {
-      width: 100%;
-      margin-bottom: 10px;
+    .gallery-item {
       break-inside: avoid;
+      margin-bottom: 12px;
+      overflow: hidden;
     }
 
-    /* =========================
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.015);
+    }
+
+
+    /* ================================
        ABOUT
-       ========================= */
+    ================================= */
 
     .about {
       background: #f5f2ed;
+      padding: 80px 25px;
       text-align: center;
-      padding: 75px 20px;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: auto;
     }
 
     .about h2 {
-      font-size: 34px;
-      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin-bottom: 18px;
     }
 
     .about p {
-      max-width: 820px;
-      margin: auto;
-      font-size: 14px;
+      font-size: 16px;
       color: #555;
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
-    /* =========================
+
+    /* ================================
        CONTACT
-       ========================= */
+    ================================= */
 
     .contact {
+      padding: 85px 25px;
       text-align: center;
-      padding: 75px 20px;
     }
 
     .contact h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 14px;
     }
 
-    .contact p {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 28px;
+    .contact-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
     }
 
     .contact-buttons {
@@ -282,28 +313,34 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
     }
 
-    .contact .btn {
+    .contact-buttons a {
       background: #222;
       color: white;
-      border-color: #222;
-      min-width: 150px;
+      padding: 14px 25px;
+      min-width: 170px;
+      font-size: 14px;
     }
 
-    .contact .btn:hover {
-      background: #555;
+    .contact-buttons a:hover {
+      background: #b38a52;
     }
 
     .contact-info {
-      font-size: 13px;
+      margin-top: 22px;
+      font-size: 14px;
       color: #777;
     }
 
-    /* =========================
+    .contact-info a {
+      color: #777;
+    }
+
+
+    /* ================================
        FOOTER
-       ========================= */
+    ================================= */
 
     footer {
       background: #222;
@@ -313,70 +350,67 @@
       font-size: 12px;
     }
 
-    /* =========================
-       MOBILE
-       ========================= */
 
-    @media (max-width: 850px) {
+    /* ================================
+       TABLET
+    ================================= */
 
-      header {
-        padding: 8px 5%;
-      }
-
-      nav {
-        gap: 16px;
-      }
-
-      .hero {
-        min-height: 75vh;
-        justify-content: center;
-        padding: 70px 25px;
-
-        background-position: 35% center;
-      }
-
-      .hero-content {
-        width: 100%;
-        max-width: 600px;
-        background: rgba(0, 0, 0, 0.28);
-        padding: 30px 20px;
-      }
-
-      .hero h1 {
-        font-size: 50px;
-      }
+    @media (max-width: 900px) {
 
       .gallery {
         columns: 2;
       }
+
+      .hero {
+        min-height: 72vh;
+        padding: 60px 30px;
+      }
+
+      .hero-content {
+        width: 52%;
+      }
     }
 
-    @media (max-width: 550px) {
 
-      header {
-        height: auto;
-        min-height: 65px;
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 650px) {
+
+      .nav {
+        justify-content: center;
       }
 
-      .logo img {
-        width: 58px;
+      .nav-links {
+        display: none;
       }
 
-      nav {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 11px;
+      .header-logo {
+        width: 90px;
       }
 
       .hero {
-        min-height: 650px;
-        background-position: 32% center;
+        min-height: 680px;
+
+        justify-content: center;
+
+        background-position: 35% center;
+
+        padding: 60px 20px;
+      }
+
+      .hero-content {
+        width: 100%;
+        max-width: 500px;
+
+        background: rgba(0, 0, 0, 0.4);
+
+        padding: 28px 18px;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 44px;
       }
 
       .hero-tagline {
@@ -384,43 +418,66 @@
         letter-spacing: 2px;
       }
 
-      .hero-description {
-        font-size: 12px;
+      .gallery {
+        columns: 1;
       }
 
       .intro h2,
       .section-heading h2,
       .about h2,
       .contact h2 {
-        font-size: 29px;
-      }
-
-      .gallery {
-        columns: 1;
+        font-size: 32px;
       }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <!-- HEADER -->
+
   <header>
 
-    <a href="#" class="logo">
-      <img src="logo.png" alt="Boulder County Photography logo">
-    </a>
+    <div class="nav">
 
-    <nav>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <a href="#">
+
+        <img
+          src="BCP New Logo.png"
+          class="header-logo"
+          alt="Boulder County Photography logo"
+        >
+
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="#portfolio">
+          Portfolio
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
 
   </header>
 
 
+
   <!-- HERO -->
+
   <section class="hero">
 
     <div class="hero-content">
@@ -435,17 +492,23 @@
       </div>
 
       <p class="hero-description">
-        Portrait photography throughout Boulder County and surrounding
-        Colorado communities.
+        Portrait photography throughout Boulder County
+        and surrounding Colorado communities.
       </p>
 
       <div class="hero-buttons">
 
-        <a href="#portfolio" class="btn btn-light">
+        <a
+          href="#portfolio"
+          class="button button-light"
+        >
           View My Work
         </a>
 
-        <a href="#contact" class="btn btn-dark">
+        <a
+          href="mailto:mskolyak@live.com"
+          class="button button-outline"
+        >
           Contact Me
         </a>
 
@@ -456,34 +519,47 @@
   </section>
 
 
+
   <!-- INTRO -->
+
   <section class="intro">
 
     <img
-      src="logo.png"
-      alt="Boulder County Photography"
+      src="BCP New Logo.png"
       class="intro-logo"
+      alt="Boulder County Photography"
     >
 
-    <h2>Capture What Matters</h2>
+    <h2>
+      Capture What Matters
+    </h2>
 
     <p>
-      Photography is about more than posing for a camera. It is about
-      capturing personality, relationships, emotion and the moments you
-      want to remember. Boulder County Photography offers relaxed,
-      personal portrait photography for individuals, couples, families,
-      seniors, maternity, newborns and special moments.
+      Photography is about more than posing for a camera.
+      It is about capturing personality, relationships,
+      emotion and the moments you want to remember.
+      Boulder County Photography offers relaxed,
+      personal portrait photography for individuals,
+      couples, families, seniors, maternity,
+      newborns and special moments.
     </p>
 
   </section>
 
 
+
   <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
+
+  <section
+    class="portfolio"
+    id="portfolio"
+  >
 
     <div class="section-heading">
 
-      <h2>A Few of My Favorites</h2>
+      <h2>
+        A Few of My Favorites
+      </h2>
 
       <p>
         Real people. Real connections. Real moments.
@@ -492,86 +568,282 @@
     </div>
 
 
+
     <div class="gallery">
 
-      <img src="portfolio1.jpg" alt="Boulder County portrait photography">
-      <img src="portfolio2.jpg" alt="Outdoor portrait photography">
-      <img src="portfolio3.jpg" alt="Senior portrait photography">
-      <img src="portfolio4.jpg" alt="Studio portrait photography">
-      <img src="portfolio5.jpg" alt="Family photography">
-      <img src="portfolio6.jpg" alt="Newborn photography">
-      <img src="portfolio7.jpg" alt="Couples photography">
-      <img src="portfolio8.jpg" alt="Portrait photographer Boulder County">
-      <img src="portfolio9.jpg" alt="Family portrait photography">
-      <img src="portfolio10.jpg" alt="Colorado portrait photography">
-      <img src="portfolio11.jpg" alt="Senior photography">
-      <img src="portfolio12.jpg" alt="Mother and child photography">
-      <img src="portfolio13.jpg" alt="Engagement photography">
-      <img src="portfolio14.jpg" alt="Children photography">
-      <img src="portfolio15.jpg" alt="Beach family photography">
-      <img src="portfolio16.jpg" alt="Newborn portrait photography">
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-04-16_23-52-32_381.jpeg"
+          alt="Portrait photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-04-16_23-52-32_462.jpeg"
+          alt="Outdoor portrait photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-04-16_23-52-32_550.jpeg"
+          alt="Senior portrait photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-04-20_23-59-31_422.jpeg"
+          alt="Fine art portrait photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-05-22_18-48-10_761.jpeg"
+          alt="Outdoor senior photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-06-25_20-45-05_774 (2022-08-26T12_46_27.756).jpeg"
+          alt="Mother and newborn photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-06-30_19-40-53_170.jpeg"
+          alt="Engagement photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-08-12_10-26-45_286.png"
+          alt="Senior portrait collection"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2022-09-11_20-15-39_247.jpeg"
+          alt="Family photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2023-03-23_03-20-55_686.jpeg"
+          alt="Engagement photography at the beach"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2023-05-17_18-05-20_520.jpeg"
+          alt="Mother and child photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="2024-02-24_16-13-40_410.jpeg"
+          alt="Couples photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="BCP_6164-Edit.jpg"
+          alt="Portrait by Boulder County Photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="BCP_7775-Edit.jpg"
+          alt="Colorado couples photography"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="GRP_1753.jpg"
+          alt="Family photography at sunset"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="nl_1.jpg"
+          alt="Black and white newborn photography"
+          loading="lazy"
+        >
+
+      </div>
+
 
     </div>
 
   </section>
 
 
+
   <!-- ABOUT -->
-  <section class="about" id="about">
 
-    <h2>Photography That Feels Like You</h2>
+  <section
+    class="about"
+    id="about"
+  >
 
-    <p>
-      I believe some of the best photographs happen when people are
-      comfortable enough to simply be themselves. Whether we are
-      capturing a senior milestone, celebrating an engagement,
-      photographing your family, welcoming a new baby or simply
-      documenting this chapter of your life, my goal is to create
-      photographs that feel genuine and worth keeping.
-    </p>
+    <div class="about-inner">
+
+      <h2>
+        Photography That Feels Like You
+      </h2>
+
+      <p>
+        I believe some of the best photographs happen when
+        people are comfortable enough to simply be themselves.
+
+        Whether we are capturing a senior milestone,
+        celebrating an engagement, photographing your family,
+        welcoming a new baby or simply documenting this chapter
+        of your life, my goal is to create photographs that
+        feel genuine and worth keeping.
+      </p>
+
+    </div>
 
   </section>
 
 
+
   <!-- CONTACT -->
-  <section class="contact" id="contact">
 
-    <h2>Let's Capture Your Story</h2>
+  <section
+    class="contact"
+    id="contact"
+  >
 
-    <p>
-      Have a session in mind? Contact me and tell me a little about what
+    <h2>
+      Let's Capture Your Story
+    </h2>
+
+    <p class="contact-text">
+      Have a session in mind?
+      Contact me and tell me a little about what
       you would like to capture.
     </p>
 
+
     <div class="contact-buttons">
 
-      <a
-        href="mailto:mskolyak@live.com"
-        class="btn"
-      >
+      <a href="mailto:mskolyak@live.com">
         Email Me
       </a>
 
-      <a
-        href="tel:3039176522"
-        class="btn"
-      >
+      <a href="tel:+13039176522">
         Call 303-917-6522
       </a>
 
     </div>
 
+
     <div class="contact-info">
-      mskolyak@live.com &nbsp; • &nbsp; 303-917-6522
+
+      <a href="mailto:mskolyak@live.com">
+        mskolyak@live.com
+      </a>
+
+      &nbsp; • &nbsp;
+
+      <a href="tel:+13039176522">
+        303-917-6522
+      </a>
+
     </div>
 
   </section>
 
 
+
   <!-- FOOTER -->
+
   <footer>
-    © 2026 Boulder County Photography &nbsp; • &nbsp; Boulder County, Colorado
+
+    © 2026 Boulder County Photography
+    &nbsp; • &nbsp;
+    Boulder County, Colorado
+
   </footer>
 
+
 </body>
+
 </html>
